@@ -5,19 +5,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
   <!--Stylesheets-->
 
   <link href="stylesheets/bootstrap.min.css" rel="stylesheet">
-  <link href="stylesheets/paging.css" rel="stylesheet" type="text/css" />
-  <!-- pagination plugin -->
+  <link href="stylesheets/paging.css" rel="stylesheet" type="text/css" /> <!-- pagination plugin -->
 
   <!--JS-->
 
   <script src="jquery.js"></script>
   <script src="javascripts/js-file.js"></script>
-  <script src="javascripts/jquery.table.hpaging.min.js"></script>
-  <!-- pagination plugin -->
+  <script src="javascripts/jquery.table.hpaging.min.js"></script> <!-- pagination plugin -->
   <script src="jquery-ui.min.js"></script>
 
   <title>Datatable</title>
@@ -67,7 +64,7 @@
     </table>
   </div>
 
-  <script type="text/javascript">
+  <script type="text/javascript">	<!--pagination script-->
     $(function () {
       $("#tb").hpaging({ "limit": 10 });
     });
@@ -78,7 +75,7 @@
     });
   </script>
 
-  <script>
+  <script>	<!--script for highlighting sorted column name on click-->
          $("#thname").click(function () {
            $(this).addClass('highlt');
            $("#thplace").removeClass('highlt');
@@ -106,5 +103,4 @@
   </script>
 
 </body>
-
 </html>

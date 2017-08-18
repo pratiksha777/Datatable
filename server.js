@@ -6,6 +6,7 @@ import path from 'path';
 import bodyparser from 'body-parser';
 import mysql from 'mysql';
 
+//mysql configuration
 const config = {
   host: 'localhost',
   port: 3306,
@@ -20,14 +21,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, '/node_modules/jquery/dist/')));
 app.use(express.static(path.join(__dirname, '/js/')));
 
+//reading index.html on route 'localhost:7000/'
 app.get('/', (req, res) => {
-
   var data = fs.readFile('index.html', function (err, data) {
     res.setHeader('Content-Type', 'text/html');
     res.send(data);
   });
 });
 
+//fetching data from database
 app.get('/path1', (req, res) => {
   var conn = mysql.createConnection(config);
   conn.connect();
@@ -42,6 +44,7 @@ app.get('/path1', (req, res) => {
   conn.end();
 });
 
+//inserting a new record
 app.post('/addrecord', (req, res) => {
   var conn = mysql.createConnection(config);
   conn.connect(function (err) {
@@ -60,6 +63,7 @@ app.post('/addrecord', (req, res) => {
   conn.end();
 });
 
+//deleting a record
 app.get('/delete/:id', (req, res) => {
   var conn = mysql.createConnection(config);
   conn.connect(function (err) {
