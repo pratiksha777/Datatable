@@ -22,7 +22,7 @@ app.use(express.static(path.join(__dirname, '/js/')));
 
 app.get('/', (req, res) => {
 
-  var data = fs.readFile('table.html', function (err, data) {
+  var data = fs.readFile('index.html', function (err, data) {
     res.setHeader('Content-Type', 'text/html');
     res.send(data);
   });
@@ -31,7 +31,7 @@ app.get('/', (req, res) => {
 app.get('/path1', (req, res) => {
   var conn = mysql.createConnection(config);
   conn.connect();
-  conn.query('select *from npat', function (err, result) {
+  conn.query('select *from datatable', function (err, result) {
     if (err) {
       console.log(err);
     }
@@ -48,7 +48,7 @@ app.post('/addrecord', (req, res) => {
     if (err) throw err;
     console.log('conneted');
   });
-  var qry = "insert into npat (name,place,animal,thing) values ('" + req.body.name + "','" + req.body.place + "','" + req.body.animal + "','" + req.body.thing + "')";
+  var qry = "insert into datatable (name,place,animal,thing) values ('" + req.body.name + "','" + req.body.place + "','" + req.body.animal + "','" + req.body.thing + "')";
   conn.query(qry, function (err, result) {
     if (err) {
       throw err;
@@ -66,7 +66,7 @@ app.get('/delete/:id', (req, res) => {
     if (err) throw err;
     console.log('conneted');
   });
-  var qry = "delete from npat where id=" + req.params.id;
+  var qry = "delete from datatable where id=" + req.params.id;
   conn.query(qry, function (err, result) {
     if (err) {
       throw err;
