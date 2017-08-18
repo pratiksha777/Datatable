@@ -1,0 +1,56 @@
+[
+  {
+    "name": "Pratiksha",
+    "place": "Pune",
+    "animal": "Panda",
+    "thing": "Phoenix"
+  },
+  {
+    "name": "Snehal",
+    "place": "Nashik",
+    "animal": "cat",
+    "thing": "watch"
+  },
+  {
+    "name": "Pratik",
+    "place": "Pune",
+    "animal": "Giraffe",
+    "thing": "Potato"
+  },
+  {
+    "name": "Shweta",
+    "place": "Nashik",
+    "animal": "squirrel",
+    "thing": "pencil"
+  },
+  {
+    "name": "Komal",
+    "place": "Nashik",
+    "animal": "rabbit",
+    "thing": "chair"
+  },
+  {
+    "name": "Anamika",
+    "place": "Nashik",
+    "animal": "elephant",
+    "thing": "eraser"
+  },
+  {
+    "name": "Roshni",
+    "place": "Nashik",
+    "animal": "deer",
+    "thing": "Torch"
+  },
+  {
+    "name": "Shruti",
+    "place": "Aurangabad",
+    "animal": "lion",
+    "thing": "pen"
+  },
+  {
+    "name": "Aayush",
+    "place": "Nagpur",
+    "animal": "Raccoon",
+    "thing": "gulabjamun"
+  }
+]

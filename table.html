@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <!--Stylesheets-->
+
+  <link href="stylesheets/bootstrap.min.css" rel="stylesheet">
+  <link href="stylesheets/paging.css" rel="stylesheet" type="text/css" />
+  <!-- pagination plugin -->
+
+  <!--JS-->
+
+  <script src="jquery.js"></script>
+  <script src="javascripts/js-file.js"></script>
+  <script src="javascripts/jquery.table.hpaging.min.js"></script>
+  <!-- pagination plugin -->
+  <script src="jquery-ui.min.js"></script>
+
+  <title>Datatable</title>
+
+  <style>
+    .highlt {
+      background-color: #3a3a3a;
+    }
+  </style>
+
+</head>
+
+<body>
+  <h2 align="center">Datatable</h2>
+  <div class="container">
+    <table align="right">
+      <tr>
+        <td>
+          <input id="pglmt" placeholder="Page Limit" title="Page Limit" class="form-control">
+        </td>
+        <td>
+          <button id="btnApply" class="btn" style="background:#6d9eed;color:white;margin-left:10px">Apply</button>
+        </td>
+      </tr>
+    </table>
+    <table class="table table-hover table-bordered" id="tb">
+      <thead>
+        <tr style="background:gray;color:white">
+          <th id="thname" onclick="sortTable(0)">Name</th>
+          <th id="thplace" onclick="sortTable(1)">Place</th>
+          <th id="thanimal" onclick="sortTable(2)">Animal</th>
+          <th id="ththing" onclick="sortTable(3)">Thing</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <form method="POST" action="/addrecord">
+          <tr id="insert" class="table-success">
+            <td><input type="text" id="name" name="name" class="form-control"></td>
+            <td><input type="text" id="place" name="place" class="form-control"></td>
+            <td><input type="text" id="animal" name="animal" class="form-control"></td>
+            <td><input type="text" id="thing" name="thing" class="form-control"></td>
+            <td align="center"><input type="submit" id="submit_btn" value="+" class="btn btn-success"></td>
+          </tr>
+        </form>
+      </tbody>
+    </table>
+  </div>
+
+  <script type="text/javascript">
+    $(function () {
+      $("#tb").hpaging({ "limit": 10 });
+    });
+
+    $("#btnApply").click(function () {
+      var lmt = $("#pglmt").val();
+      $("#tb").hpaging("newLimit", lmt);
+    });
+  </script>
+
+  <script>
+         $("#thname").click(function () {
+           $(this).addClass('highlt');
+           $("#thplace").removeClass('highlt');
+           $("#thanimal").removeClass('highlt');
+           $("#ththing").removeClass('highlt');
+         });
+         $("#thplace").click(function () {
+           $(this).addClass('highlt');
+           $("#thname").removeClass('highlt');
+           $("#thanimal").removeClass('highlt');
+           $("#ththing").removeClass('highlt');
+         });
+         $("#thanimal").click(function () {
+           $(this).addClass('highlt');
+           $("#thplace").removeClass('highlt');
+           $("#thname").removeClass('highlt');
+           $("#ththing").removeClass('highlt');
+         });
+         $("#ththing").click(function () {
+           $(this).addClass('highlt');
+           $("#thplace").removeClass('highlt');
+           $("#thanimal").removeClass('highlt');
+           $("#thname").removeClass('highlt');
+         });
+  </script>
+
+</body>
+
+</html>
