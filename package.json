@@ -1,5 +1,5 @@
 {
-  "name": "nodeassignment",
+  "name": "datatable",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -16,6 +16,7 @@
     "jquery": "^3.2.1",
     "jquery-ui": "^1.12.1",
     "morgan": "~1.8.1",
+    "mysql": "^2.14.1",
     "serve-favicon": "~2.4.2"
   },
   "devDependencies": {
@@ -29,5 +30,22 @@
     "jquery-ui": "^1.12.1",
     "style-loader": "^0.18.2",
     "webpack": "^3.5.4"
-  }
+  },
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pratiksha777/Datatable.git"
+  },
+  "author": "Pratiksha Paluskar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pratiksha777/Datatable/issues"
+  },
+  "homepage": "https://github.com/pratiksha777/Datatable#readme",
+  "description": "datatable",
+  "keywords": [
+    "datatable",
+    "expressjs",
+    "nodejs"
+  ]
 }
